@@ -1,0 +1,4 @@
+PyQt5==5.15.2
+beautifulsoup4==4.9.3
+requests==2.24.0
+rdflib==5.0.0
