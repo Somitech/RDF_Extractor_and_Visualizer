@@ -39,7 +39,60 @@ The application aims to:
 
 5. **Output**: The graph visualization can be saved as an HTML file, allowing users to view and share the graph outside the application.
 
-## Architecture of the Application
+
+### File Architecture
+
+```
+/semantic_web_app
+│
+├── /gui
+│   ├── app_ui.py                # Contains the generated UI code from Qt Designer (.ui file converted to Python)
+│   ├── main_window.py           # Manages the main window and the GUI logic for the application
+│   └── __init__.py              # Makes the `gui` directory a package
+│
+├── /scraper
+│   ├── scraper.py               # Contains logic for scraping HTML content from web pages or local files
+│   └── __init__.py              # Makes the `scraper` directory a package
+│
+├── /rdf
+│   ├── rdf_manager.py           # Contains logic to create RDF graphs from extracted entities and relations
+│   ├── rdf_graph_visualizer.py  # Handles the logic to visualize RDF graphs using Graphviz or a similar tool
+│   └── __init__.py              # Makes the `rdf` directory a package
+│
+├── main.py                      # Main entry point for the application; initializes the GUI and starts the app
+└── README.md                    # Documentation file explaining how to set up and run the application
+```
+
+### Brief Explanation of Each File
+
+#### 1. `/gui/app_ui.py`
+- **Purpose**: This file is auto-generated from a `.ui` file created in Qt Designer. It contains the layout and widget definitions for the main window of the application.
+- **Explanation**: This file is not typically edited manually. Instead, it is generated from a visual designer tool, making it easier to design complex UIs.
+
+#### 2. `/gui/main_window.py`
+- **Purpose**: This file contains the logic for interacting with the GUI elements defined in `app_ui.py`.
+- **Explanation**: It connects user actions (like button clicks) to the appropriate methods (e.g., extracting data, visualizing the RDF graph). It also handles the integration of different components of the application.
+
+#### 3. `/scraper/scraper.py`
+- **Purpose**: This file contains the logic to scrape HTML content from either a provided URL or a local file path.
+- **Explanation**: It retrieves the raw HTML content, which will later be processed for entity and relationship extraction.
+
+#### 4. `/rdf/rdf_manager.py`
+- **Purpose**: This file is responsible for creating RDF graphs from the extracted entities and relationships.
+- **Explanation**: It uses libraries like `rdflib` to construct RDF triples, which represent the relationships between entities in a structured format.
+
+#### 5. `/rdf/rdf_graph_visualizer.py`
+- **Purpose**: This file handles the visualization of RDF graphs.
+- **Explanation**: It converts the RDF graph into a visual format (e.g., using Graphviz or D3.js) and generates an HTML file (`rdf_graph.html`) that can be viewed in a browser.
+
+#### 6. `main.py`
+- **Purpose**: The main entry point for the application.
+- **Explanation**: This script initializes the application, creates the main window, and starts the event loop for the GUI. It's the script you run to start the application.
+
+
+### Summary
+
+This file architecture organizes the application into modular components, each with a clear responsibility. The `gui` directory manages the user interface, `scraper` handles content extraction, and `rdf` deals with semantic web logic (RDF creation and visualization). This structure promotes maintainability and scalability, allowing you to easily add features or make changes to specific parts of the application.
 
 ### 1. **User Interface (UI)**
 
