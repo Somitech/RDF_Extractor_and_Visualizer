@@ -137,7 +137,7 @@ This file architecture organizes the application into modular components, each w
    ```
 2. Navigate to the project directory:
    ```bash
-   cd semantic_web_app
+   cd RDF_Extractor_and_Visualizer
    ```
 3. Install dependencies:
    ```bash
