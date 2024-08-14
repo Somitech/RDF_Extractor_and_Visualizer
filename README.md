@@ -152,14 +152,3 @@ This file architecture organizes the application into modular components, each w
    ```
 2. Use the GUI to load an HTML file, view the extracted RDF data, and visualize the RDF structure.
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a pull request or report issues on the GitHub repository.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-This README now correctly reflects the functionality of your application. Let me know if there are any more details you'd like to add!
